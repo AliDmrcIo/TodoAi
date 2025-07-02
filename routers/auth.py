@@ -83,7 +83,11 @@ def render_register_page(request: Request):
     return templates.TemplateResponse("register.html", {"request":request})
 
 
+<<<<<<< HEAD
 @router.post("/", status_code = status.HTTP_201_CREATED) # Registration Operations
+=======
+@router.post("/auth", status_code = status.HTTP_201_CREATED) # Registration Operations
+>>>>>>> 7f1509533f07e3982ada68c4b23bb04516ad68d7
 async def create_user(db: db_dependency, create_user_request: CreateUserRequest):
     user = User( # Burada, base.js dosyasının "Register JS" kısmı içerisinde, register.html register formundaki verileri toplar ve /auth endpoint’ine JSON olarak POST eder. Burası da yollanan verileri alır ve sqlite'a kaydeder.
         username=create_user_request.username,
